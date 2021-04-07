@@ -1,0 +1,1 @@
+<view><view></view><view><t-video vue-id="1c2cc4ce-1" video_list="{{video_list}}" video_index="{{video_index}}" bind:__l="__l"></t-video></view><view></view><view></view></view>

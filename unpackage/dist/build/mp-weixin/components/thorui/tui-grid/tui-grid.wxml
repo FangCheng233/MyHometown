@@ -1,0 +1,1 @@
+<view class="{{['tui-grids data-v-057126a9',(unlined)?'tui-border-top':'']}}"><slot></slot></view>

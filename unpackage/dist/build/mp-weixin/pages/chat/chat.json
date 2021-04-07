@@ -1,0 +1,10 @@
+{
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tui-sticky": "/components/thorui/tui-sticky/tui-sticky",
+    "tui-image-group": "/components/thorui/tui-image-group/tui-image-group",
+    "tui-loadmore": "/components/thorui/tui-loadmore/tui-loadmore",
+    "tui-badge": "/components/thorui/tui-badge/tui-badge",
+    "t-chat-bar": "/components/views/t-chat-bar/t-chat-bar"
+  }
+}

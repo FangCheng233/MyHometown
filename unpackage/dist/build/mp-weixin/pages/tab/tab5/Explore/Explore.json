@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tui-fab": "/components/thorui/tui-fab/tui-fab"
+  }
+}

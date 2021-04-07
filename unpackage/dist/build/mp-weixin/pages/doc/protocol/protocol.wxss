@@ -1,0 +1,1 @@
+.container{width:100%;padding:30rpx;box-sizing:border-box;padding-bottom:48rpx}.container .tui-text{font-size:24rpx;text-indent:2em;color:#333;padding-bottom:8rpx;tui-text-align:justify}.container .tui-sub{padding-left:10px}

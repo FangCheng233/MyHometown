@@ -1,0 +1,85 @@
+{
+  "pages": [
+    "pages/tab/tab1/index",
+    "pages/index/guide",
+    "pages/index/init",
+    "pages/tab/tab2/index",
+    "pages/tab/tab3/index",
+    "pages/tab/tab4/index",
+    "pages/chat/chat",
+    "pages/tab/tab5/index",
+    "pages/tab/tab5/forgetPwd/forgetPwd",
+    "pages/tab/tab5/login/login",
+    "pages/tab/tab5/reg/reg",
+    "pages/doc/protocol/protocol",
+    "components/views/t-video/t-video",
+    "pages/tab/tab2/near/near",
+    "pages/tab/tab2/question/question",
+    "pages/tab/tab2/team/team",
+    "pages/tab/tab2/Intelligence/Intelligence",
+    "pages/tab/tab2/viewDetails/viewDetails",
+    "pages/tab/tab5/Dynamic/Dynamic",
+    "pages/tab/tab4/Library/Library",
+    "pages/tab/tab4/Documents/Documents",
+    "pages/tab/tab4/PeopleNearby/PeopleNearby",
+    "pages/tab/tab5/Explore/Explore",
+    "components/views/t-video-list/t-video-list",
+    "pages/tab/tab1/showVideo/showVideo"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#C0C4CC",
+    "selectedColor": "#fa436a",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/tab/tab1/index",
+        "iconPath": "static/tabbar/tab1-gray.png",
+        "selectedIconPath": "static/tabbar/tab1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/tab/tab2/index",
+        "iconPath": "static/tabbar/tab2-gray.png",
+        "selectedIconPath": "static/tabbar/tab2-gray.png",
+        "text": "探索"
+      },
+      {
+        "pagePath": "pages/tab/tab3/index",
+        "iconPath": "static/tabbar/tab3-gray.png",
+        "selectedIconPath": "static/tabbar/tab3.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/tab/tab4/index",
+        "iconPath": "static/tabbar/tab4-gray.png",
+        "selectedIconPath": "static/tabbar/tab4.png",
+        "text": "实验室"
+      },
+      {
+        "pagePath": "pages/tab/tab5/index",
+        "iconPath": "static/tabbar/tab5-gray.png",
+        "selectedIconPath": "static/tabbar/tab5.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "tab1": "/pages/tab/tab1/index",
+    "tab2": "/pages/tab/tab2/index",
+    "tab3": "/pages/tab/tab3/index",
+    "tab4": "/pages/tab/tab4/index",
+    "tab5": "/pages/tab/tab5/index",
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

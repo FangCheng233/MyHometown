@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "tui-sticky": "/components/thorui/tui-sticky/tui-sticky",
+    "tui-navigation-bar": "/components/thorui/tui-navigation-bar/tui-navigation-bar",
+    "tui-icon": "/components/thorui/tui-icon/tui-icon",
+    "tui-badge": "/components/thorui/tui-badge/tui-badge",
+    "tui-loadmore": "/components/thorui/tui-loadmore/tui-loadmore",
+    "tui-loading": "/components/thorui/tui-loading/tui-loading",
+    "t-video-list": "/components/views/t-video-list/t-video-list"
+  }
+}

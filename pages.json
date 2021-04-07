@@ -1,0 +1,399 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+		    "path" : "pages/index/init",
+		    "style" :                                                                                    
+		    {
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+			"path": "pages/tab/tab1/index",
+			"style": {
+				"onReachBottomDistance": 900
+			}
+		},
+		{
+		    "path" : "components/views/t-view-list/t-view-list",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "onReachBottomDistance": 50
+		    }
+		    
+		},
+		{
+			// 引导页
+			"path": "pages/index/guide",
+			"style": {
+				"titleNView": false,
+				"app-plus": {
+				    "bounce": "none"
+				}
+			}
+		},
+        
+		{
+		    "path" : "pages/tab/tab2/index",
+		    "style" :                                                                                    
+		    {
+		        "enablePullDownRefresh": true,
+				"onReachBottomDistance": 500
+		    }
+		    
+		},
+		{
+		    "path" : "pages/tab/tab3/index",
+		    "style" :                                                                                    
+		    {
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/tab/tab4/index",
+		    "style" :                                                                                    
+		    {
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
+		,{
+		    "path" : "pages/chat/chat",
+		    "style" :                                                                                    
+		    {
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
+		,{
+		    "path" : "pages/chat/msgList/msgList",
+		    "style" :                                                                                    
+		    {
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
+		,{
+		    "path" : "pages/chat/friendList/friendList",
+		    "style" :                                                                                    
+		    {
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
+		,{
+		    "path" : "pages/tab/tab5/index",
+		    "style" :                                                                                    
+		    {
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/tab/tab5/forgetPwd/forgetPwd",
+		    "style" :                                                                                    
+		    {
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/tab/tab5/login/login",
+		    "style" :                                                                                    
+		    {
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
+		    "path" : "pages/tab/tab5/reg/reg",
+		    "style" :                                                                                    
+		    {
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
+        ,{
+            "path" : "pages/doc/protocol/protocol",
+            "style" :                                                                                    
+            {
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "components/views/t-video/t-video",
+            "style" :                                                                                    
+            {
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tab/tab2/near/near",
+            "style" :                                                                                    
+            {
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tab/tab2/question/question",
+            "style" :                                                                                    
+            {
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tab/tab2/team/team",
+            "style" :                                                                                    
+            {
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tab/tab2/Intelligence/Intelligence",
+            "style" :                                                                                    
+            {
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tab/tab2/viewDetails/viewDetails",
+            "style" :                                                                                    
+            {
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tab/tab5/Dynamic/Dynamic",
+            "style" :                                                                                    
+            {
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tab/tab4/Library/Library",
+            "style" :                                                                                    
+            {
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tab/tab4/Documents/Documents",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tab/tab4/PeopleNearby/PeopleNearby",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tab/tab5/Explore/Explore",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tab/tab1/showVideo/showVideo",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tab/tab2/Panoramic/Panoramic",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "components/views/t-scroll/t-scroll",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "components/views/t-weather/t-weather",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tab/tab1/City/City",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/resultList/resultList",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/search/search",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "components/views/tx-video/tx-video",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "components/views/search-video/search-video",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "components/views/search-area/search-area",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "components/views/search-context/search-context",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "components/views/search-live/search-live",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tab/tab2/type/type",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/tab/tab1/TCustom/TCustom",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"enablePullDownRefresh":true,
+		"navigationStyle": "custom",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+			"color": "#C0C4CC", //未选中的菜单文字颜色
+			"selectedColor": "#fa436a", //选中时的菜单文字颜色
+			"borderStyle": "black",
+			"backgroundColor": "#ffffff", //背景
+			"list": [{
+					"pagePath": "pages/tab/tab1/index", //页面地址
+					"iconPath": "static/tabbar/tab1-gray.png", //未选中时的图片
+					"selectedIconPath": "static/tabbar/tab1.png", //选中时的图片
+					"text": "首页" //菜单文字
+				},
+				{
+					"pagePath": "pages/tab/tab2/index",
+					"iconPath": "static/tabbar/tab2-gray.png",
+					"selectedIconPath": "static/tabbar/tab2.png",
+					"text": "探索"
+				},
+				{
+					"pagePath": "pages/tab/tab3/index",
+					"iconPath": "static/tabbar/tab3-gray.png",
+					"selectedIconPath": "static/tabbar/tab3.png",
+					"text": "发布"
+				},
+				{
+					"pagePath": "pages/tab/tab4/index",
+					"iconPath": "static/tabbar/tab4-gray.png",
+					"selectedIconPath": "static/tabbar/tab4.png",
+					"text": "目的地"
+				},
+				{
+					"pagePath": "pages/tab/tab5/index",
+					"iconPath": "static/tabbar/tab5-gray.png",
+					"selectedIconPath": "static/tabbar/tab5.png",
+					"text": "我的"
+				}
+			]
+	},
+	"easycom":{
+		"autoscan": true,
+		 "custom": {
+		    "tui-(.*)": "@/components/thorui/tui-$1/tui-$1.vue",
+			"t-(.*)": "@/components/views/t-$1/t-$1.vue",
+			"search-(.*)": "@/components/views/search-$1/search-$1.vue",
+			"uni-(.*)": "@/components/common/uni-$1/uni-$1.vue",
+			"car-list": "@/components/car-list/car-list.vue"
+		}
+	}
+}

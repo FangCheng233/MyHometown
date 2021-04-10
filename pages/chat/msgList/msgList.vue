@@ -8,17 +8,7 @@
 				
 			</view>
 		</view>
-		<!--tabbar-->
-		<view class="tui-tabbar">
-			<block v-for="(item,index) in tabbar" :key="index">
-				<view class="tui-tabbar-item" :class="[current==index?'tui-item-active':'']" :data-index="index" @tap="tabbarSwitch">
-					<tui-icon :name="current==index?(item.icon+'-fill'):item.icon" :color="current==index?'#00C0FB':'#666'" :size="item.size"
-					 :class="[index==0?'tui-ptop-4':'']"></tui-icon>
-					<view class="tui-scale">{{item.text}}</view>
-				</view>
-			</block>
-		</view>
-		<!--tabbar-->
+		
 		<!--searchbox-->
 		<view class="tui-searchbox">
 			<view class="tui-search-input" @tap="search">
@@ -27,9 +17,8 @@
 			</view>
 		</view>
 		<!--searchbox-->
-
-		<block v-for="(item,index) in msgList" :key="index">
-			<navigator url="/pages/chat/chat">
+		<view>
+			<block v-for="(item,index) in msgList" :key="index">
 				<tui-list-cell @click="detail" :unlined="true">
 					<view class="tui-chat-item">
 						<view class="tui-msg-box">
@@ -45,34 +34,22 @@
 						</view>
 					</view>
 				</tui-list-cell>
-			</navigator>
-			
-		</block>
+			</block>
+		</view>
+		<t-chat-nav :current="0"></t-chat-nav>
 		<!-- <scroll :onBottom = "onBottom"></scroll> -->
 		<!-- <view class="tui-safearea-bottom"></view> -->
 	</view>
 </template>
 
 <script>
+	import tChatBar from '@/components/views/t-chat-nav/t-chat-nav';
 	export default {
 		data() {
 			return {
-				current: 0,
-				tabbar: [{
-					icon: "community",
-					text: "消息",
-					size: 24
-				}, {
-					icon: "people",
-					text: "联系人",
-					size: 24
-				}, {
-					icon: "explore",
-					text: "发现",
-					size: 24
-				}],
 				msgList: [{
 					nickname: "丽江古城管委会",
+					name: "lijiang",
 					pic: "avatar_1",
 					msg: "欢迎您的到来！",
 					msgNum: 2,
@@ -80,6 +57,7 @@
 					level: 1
 				}, {
 					nickname: "故宫博物院",
+					name: "gugong",
 					pic: "avatar_2",
 					msg: "您好！",
 					msgNum: 2,
@@ -87,6 +65,7 @@
 					level: 3
 				}, {
 					nickname: "华山官方",
+					name: "huashan",
 					pic: "4",
 					msg: "[图片]",
 					msgNum: 18,
@@ -94,6 +73,7 @@
 					level: 1
 				}, {
 					nickname: "七彩丹霞地质公园",
+					name: "danxia",
 					pic: "2",
 					msg: "[视频]",
 					msgNum: 98,
@@ -101,6 +81,7 @@
 					level: 2
 				}, {
 					nickname: "黄山管理委员会",
+					name: "huangshan",
 					pic: "avatar_1",
 					msg: "对方已同意你的好友请求",
 					msgNum: 2,
@@ -110,19 +91,6 @@
 			}
 		},
 		methods: {
-			tabbarSwitch: function(e) {
-				let index = e.currentTarget.dataset.index;
-				this.current = index;
-				if (index != 0) {
-					if (index == 1) {
-						uni.navigateTo({
-							url: '../friendList/friendList'
-						})
-					} else {
-						this.tui.toast("功能开发中~")
-					}
-				}
-			},
 			search: function() {
 				uni.navigateTo({
 					url: '../../news/search/search'
@@ -135,7 +103,7 @@
 			},
 			detail: function() {
 				uni.navigateTo({
-					url: '../chat/chat'
+					url: '/pages/chat/chat'
 				})
 			}
 		},
@@ -149,70 +117,7 @@
 	.container {
 		padding-bottom: 100rpx
 	}
-
-	/*tabbar*/
-
-	.tui-tabbar {
-		width: 100%;
-		position: fixed;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		z-index: 99999;
-		background-color: #fff;
-		height: 100rpx;
-		left: 0;
-		bottom: 0;
-		padding-bottom: env(safe-area-inset-bottom);
-	}
-
-	.tui-safearea-bottom {
-		width: 100%;
-		height: env(safe-area-inset-bottom);
-	}
-
-	.tui-tabbar::before {
-		content: '';
-		width: 100%;
-		border-top: 1rpx solid #d2d2d2;
-		position: absolute;
-		top: 0;
-		left: 0;
-		-webkit-transform: scaleY(0.5);
-		transform: scaleY(0.5);
-	}
-
-	.tui-tabbar-item {
-		flex: 1;
-		width: 25%;
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		justify-content: space-between;
-		font-size: 24rpx;
-		color: #666;
-		height: 80rpx;
-	}
-
-	.tui-ptop-4 {
-		padding-top: 4rpx;
-	}
-
-	.tui-scale {
-		font-weight: bold;
-		transform: scale(0.8);
-		transform-origin: center 100%;
-		line-height: 30rpx;
-	}
-
-	.tui-item-active {
-		color: #00c0fb !important;
-	}
-
-	/*tabbar*/
-
 	/*searchbox*/
-
 	.tui-searchbox {
 		width: 100%;
 		height: 100rpx;

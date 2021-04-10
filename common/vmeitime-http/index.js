@@ -73,7 +73,7 @@ export const getDetailsAPI = (data) => {
 // attractions
 export const getHotViewsList = (data) => {
     return http.request({
-        url: '/data/attractions/hot',
+        url: '/data/view/hot',
         method: 'GET', 
         data,
 		// handle:true
@@ -81,7 +81,7 @@ export const getHotViewsList = (data) => {
 }
 export const getServiceAPI = (data) => {
     return http.request({
-        url: '/data/attractions/service',
+        url: '/data/view/service',
         method: 'GET', 
         data,
 		// handle:true
@@ -89,7 +89,7 @@ export const getServiceAPI = (data) => {
 }
 export const getRecommendedAPI = (data) => {
     return http.request({
-        url: '/data/attractions/recommended',
+        url: '/data/view/recommended',
         method: 'GET', 
         data,
 		// handle:true
@@ -97,7 +97,7 @@ export const getRecommendedAPI = (data) => {
 }
 export const browse = (data) => {
     return http.request({
-        url: '/data/attractions/browse',
+        url: '/data/view/browse',
         method: 'POST', 
         data,
 		// handle:true
@@ -106,7 +106,7 @@ export const browse = (data) => {
 // search
 export const searchAPI = (data) => {
     return http.request({
-        url: '/data/search/select',
+        url: '/data/view/select',
         method: 'GET', 
         data,
 		// handle:true
@@ -114,7 +114,7 @@ export const searchAPI = (data) => {
 }
 export const searchBaikeAPI = (data) => {
     return http.request({
-        url: '/data/search/baike',
+        url: '/data/view/baike',
         method: 'GET', 
         data,
 		// handle:true
@@ -139,7 +139,22 @@ export const getViewDetailsAPI = (data) => {
 		// handle:true
     })
 }
-
+export const setUserStarAPI = (data) => {
+    return http.request({
+        url: '/data/star/like/' + uni.getStorageSync("user"),
+        method: 'GET', 
+        data,
+		// handle:true
+    })
+}
+export const getUserStarAPI = (data) => {
+    return http.request({
+        url: '/data/star/get/' + uni.getStorageSync("user"),
+        method: 'GET', 
+        data,
+		// handle:true
+    })
+}
 // 获取验证码
 export const getCodeImg = (data) =>{
   return http.request({
@@ -164,5 +179,7 @@ export default {
 	searchBaikeAPI,
 	getVideoListAPI,
 	getViewDetailsAPI,
-	getCodeImg
+	getCodeImg,
+	getUserStarAPI,
+	setUserStarAPI
 }

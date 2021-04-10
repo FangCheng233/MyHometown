@@ -149,7 +149,8 @@
 						this.viewInfo = res.data.info
 					}
 				})
-			}
+			},
+			
 		},
 		mounted() {
 			this.getViewDetails();

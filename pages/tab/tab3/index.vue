@@ -2,24 +2,23 @@
 	<!-- 用户动态页面 -->
 	<view>
 		<!-- 动态发布 -->
-		<view>
+		<!-- <view>
 			<cu-custom bgColor="bg-gradual-pink" :isBack="false">
 				<block slot="backText">返回</block>
 				<block slot="content">导航栏</block>
 				<block slot="right"></block>
 			</cu-custom>
-			
-		</view>
+		</view> -->
 		<!-- 动态列表 -->
 		<view>
-			<scroll-view scroll-x class="bg-grey nav text-center">
-				<view class="cu-item" :class="0==TabCur?'text-white cur':''" @tap="tabSelect" data-id="0">
+			<scroll-view scroll-x class="nav text-center">
+				<view class="cu-item" :class="0==TabCur?' cur':''" @tap="tabSelect" data-id="0">
 					<text class="t-icon iconbiaoqing text-center"></text> 推荐
 				</view>
-				<view class="cu-item" :class="1==TabCur?'text-white cur':''" @tap="tabSelect" data-id="1">
+				<view class="cu-item" :class="1==TabCur?' cur':''" @tap="tabSelect" data-id="1">
 					附近
 				</view>
-				<view class="cu-item" :class="2==TabCur?'text-white cur':''" @tap="tabSelect" data-id="2">
+				<view class="cu-item" :class="2==TabCur?' cur':''" @tap="tabSelect" data-id="2">
 					好友
 				</view>
 			</scroll-view>

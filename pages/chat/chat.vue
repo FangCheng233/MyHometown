@@ -40,9 +40,11 @@
 		<!-- 聊天内容信息 通过切换不同的用户显示不同的聊天记录 使用本地存储保存聊天记录-->
 		<view class="tui-chat-content">
 			<tui-loadmore v-if="loadding" :index="3" type="primary" text=" "></tui-loadmore>
+			<!-- 隐藏部分聊天记录 通过下拉操作展示 -->
 			<view v-show="show">
 				<view class="tui-label">对方已通过您的好友请求</view>
 			</view>
+			<!--  -->
 			<scroll-view :scroll-top="scrollTop" style="height: 700px;" scroll-y="true" class="scroll-Y"
                 @scroll="scroll">
 					<view v-for="(item, index) in messages" :key="index">

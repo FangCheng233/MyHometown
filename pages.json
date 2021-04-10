@@ -124,14 +124,6 @@
             
         }
         ,{
-            "path" : "components/views/t-video/t-video",
-            "style" :                                                                                    
-            {
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
             "path" : "pages/tab/tab2/near/near",
             "style" :                                                                                    
             {

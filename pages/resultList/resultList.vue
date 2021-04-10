@@ -76,14 +76,15 @@
 						<tui-icon name="screen" :size="12" color="#5677fc" :bold="true"></tui-icon>
 					</view>
 				</view> -->
+				<!-- 景点 -->
 				<view class="cu-list menu-avatar">
 					<view class="cu-item" v-for="(item,index) in viewList" :key="index">
 						<view class="cu-avatar radius lg" :style="'background-image:url('+ item.photos +');'"></view>
 						<view class="content" @click="navigateDetails" :data-id="item.id">
 							<view class="text-pink">
-								<view class="text-cut">{{item.name}}</view>
+								<view class="text-cut">{{ item.name }}</view>
 								<!-- <view class="cuIcon-hotfill sm" style="margin-left: 5px;">{{item.heat}}</view> -->
-								<!-- <view class="cu-tag round bg-green sm" v-for="(litem,lindex) in item.tags">{{ litem}}</view> -->
+								<!-- <view class="cu -tag round bg-green sm" v-for="(litem,lindex) in item.tags">{{ litem}}</view> -->
 							</view>
 							<view>
 								<view class="cu-tag round bg-orange sm" v-for="(litem,lindex) in item.tags">{{litem}}</view>
@@ -103,7 +104,7 @@
 					</view>
 				</view>
 			</block>
-			<!-- 城市 -->
+			<!-- 地区 -->
 			<block v-if="TabCur == 1">
 				<view class="cu-card article" v-if="value != ''&& value != null">
 					<view class="cu-item shadow">
@@ -181,7 +182,7 @@
 				canLoad: false,
 			};
 		},
-		onLoad(option){
+		onLoad(option) {
 			this.value = option.value
 			this.search()
 			uni.getStorage({
@@ -207,8 +208,8 @@
 				this.$eventHub.$emit('select',{msg:this.value})
 			},
 			navigateDetails: function(e) {
-				uni.navigateBack({
-					
+				uni.navigateTo({
+					url: '/pages/tab/tab2/viewDetails/viewDetails?id=' + e.currentTarget.dataset.id
 				})
 			},
 			goBack: function() {
@@ -220,7 +221,6 @@
 				if(this.cleanHistory == false){
 					this.history.splice(index,1)
 				}
-				
 			},
 			search: function() {
 				let postData = {
@@ -241,7 +241,6 @@
 							let image = res.data[i].image;
 							view['tags'] = tags;
 							view['heat'] = res.data[i].heat;
-							
 							if(image != null) {
 								view['photos'] = image.url;
 							}
@@ -257,7 +256,6 @@
 						this.city_url = cityinfo.ImgUrl
 						this.city_content = cityinfo.content
 					}
-
 				});
 			},
 			

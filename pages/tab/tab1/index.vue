@@ -52,7 +52,7 @@
 						
 						<view class="bg-grey box-size bg-img" :class="'basis-' + item.size" :style="[{backgroundImage: 'url(' + item.bg_url +')'}]" v-for="(item, index) in youhui" :key="index">
 							<view :style="[{marginTop: item.mt + 'px',marginLeft: item.ml +'px'}]">
-								<text class="text-cut">{{ item.title }}</text>
+								<!-- <text class="text-cut">{{ item.title }}</text> -->
 							</view>
 						</view>
 						
@@ -85,7 +85,7 @@
 					<!-- 浮动按钮实现 -->
 					<view class="padding-xs radius">
 						<view class="cu-card case">
-							<view class="image" :style="[{height: windowHeight/5 +'px'}]">
+							<view class="image" :style="[{height: windowHeight/6 +'px'}]">
 								<image :src="item.bg_url"></image>
 								<view class="cu-tag bg-blue">{{ item.title }}</view>
 								<view class="cu-bar bg-shadeBottom"> <text class="text-cut">{{ item.context }}</text></view>
@@ -156,8 +156,8 @@
 					title: '清明赏花季',
 					url: '',
 					size: 'lg',
-					ml: 15,
-					mt: 20
+					ml: 0,
+					mt: 0
 				}, {
 					bg_url: 'https://p3.pstatp.com/large/50ad000060b9cb0b0ba6',
 					title: '自由行',
@@ -171,7 +171,7 @@
 					url: '',
 					size: '30',
 					ml: 0,
-					mt: 20
+					mt: 0
 				}, {
 					bg_url: 'https://www.21rv.com/userfiles/image/20190416/16111750ef8d002eec1938_1068_712.jpg',
 					title: '房车旅行',

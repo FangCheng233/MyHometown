@@ -19,7 +19,6 @@
 					</view>
 				</block>
 			</cu-custom>
-			
 		</view>
 		<view>
 			<!-- 筛选列表 -->
@@ -94,7 +93,7 @@
 				</view>
 				<view class="cu-list menu-avatar">
 					<view class="cu-item" v-for="(item,index) in viewList" :key="index">
-						<view class="cu-avatar radius lg" :style="'background-image:url('+ item.photos +');'"></view>
+						<view class="cu-avatar radius lg" :style="'background-image:url('+ item.image +');'"></view>
 						<view class="content" @click="navigateDetails" :data-id="item.id">
 							<view class="text-pink">
 								<view class="text-cut">{{item.name}}</view>
@@ -262,10 +261,6 @@
 							let photos = res.data[i].imageList;
 							view['tags'] = tags;
 							view['heat'] = res.data[i].heat;
-							
-							if(photos.length > 0) {
-								view['photos'] = photos[0].url;
-							}
 							this.viewList.push(
 								view
 							)

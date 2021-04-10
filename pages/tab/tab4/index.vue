@@ -39,7 +39,7 @@
 											<view class="text-green text-sm cu-tag round sm">学生优惠</view>
 										</view>
 										<view class="text-gray text-sm">
-											户外徒步
+											{{ vitem.address }}
 											<text class="text-red "></text>
 										</view>
 									</view>
@@ -66,15 +66,7 @@
 				</view>
 			</checkbox-group>
 		</view>
-		<!-- 结算跳转栏 -->
-		<view>
-			<!-- 底部菜单栏 -->
-			<view class="action-section">
-				<view>
-					<text>规划选中目的地</text>
-				</view>
-			</view>
-		</view>
+		
 	</view>
 </template>
 
@@ -327,23 +319,5 @@
 	.line-through {
 		text-decoration:line-through;
 	}
-	/* 结算栏 */
-	.action-section{
-		/* #ifdef H5 */
-		margin-bottom:100upx;
-		/* #endif */
-		position:fixed;
-		right: 200upx;
-		bottom: 10upx;
-		z-index: 95;
-		align: center;
-		display: flex;
-		align-items: center;
-		width: 300upx;
-		height: 100upx;
-		padding: 0 30upx;
-		background: rgba(255, 255, 255, 0.0);
-		box-shadow: 0 0 20upx 0 rgba(0,0,0,.5);
-		border-radius: 50upx;
-	}
+
 </style>

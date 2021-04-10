@@ -142,7 +142,7 @@ export const getViewDetailsAPI = (data) => {
 export const setUserStarAPI = (data) => {
     return http.request({
         url: '/data/star/like/' + uni.getStorageSync("user"),
-        method: 'GET', 
+        method: 'POST', 
         data,
 		// handle:true
     })

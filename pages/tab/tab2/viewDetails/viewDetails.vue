@@ -73,6 +73,16 @@
 				
 			</scroll-view>
 		</view>
+		<!-- 结算跳转栏 -->
+		<view>
+			<!-- 底部菜单栏 -->
+			<view class="action-section" @click="star">
+				<view class="align-center">
+					<text class="icon t-icon iconshoucang" v-if="isStar"></text>
+					<text class="icon t-icon iconshoucang2" v-else="isStar"></text>
+				</view>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -85,6 +95,7 @@
 				modalName: null,
 				gridBorder: false,
 				viewInfo: {},
+				isStar: false,
 				iconList: [{
 					cuIcon: 'iconfujin',
 					url: '/pages/tab/tab2/near/near',
@@ -149,6 +160,15 @@
 						this.viewInfo = res.data.info
 					}
 				})
+			},
+			star: function() {
+				let postData = {
+					id: this.viewId
+				}
+				this.isStar = true
+				this.$api.setUserStarAPI(postData).then(res => {
+					
+				});
 			},
 			
 		},
@@ -296,5 +316,24 @@
 	
 	.DrawerPage .cu-bar.tabbar .action {
 		flex: initial;
+	}
+	
+	/* 结算栏 */
+	.action-section{
+		/* #ifdef H5 */
+		margin-bottom:100upx;
+		/* #endif */
+		position:fixed;
+		right: 20upx;
+		bottom: 20upx;
+		z-index: 95;
+		display: flex;
+		align-items: center;
+		width: 80upx;
+		height: 80upx;
+		padding: 0 20upx;
+		background: rgba(255, 255, 255, 0.0);
+		box-shadow: 0 0 20upx 0 rgba(0,0,0,.5);
+		border-radius: 50upx;
 	}
 </style>

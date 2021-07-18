@@ -99,9 +99,9 @@ export default {
 					uni.setStorageSync("Authorization",res.data.data.access_token);
 					uni.setStorageSync("user", this.loginForm.username);
 					uni.setStorageSync("isLogin", true);
-					uni.navigateBack({
-						
-					})
+					uni.switchTab({
+					    url: '/pages/tab/tab5/index'
+					});
 				}
 				
 			});
@@ -112,10 +112,9 @@ export default {
 			});
 		}
 	},
-	created() {
+	onLoad() {
 		this.getCode();
 		this.getCookie();
-		
 	}
 };
 </script>

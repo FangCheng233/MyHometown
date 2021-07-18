@@ -6,15 +6,17 @@
 			<!-- 顶部导航 -->
 			<view>
 				<view class="fixed">
-					<cu-custom :isBack="true" bgColor="white">
-						<block slot="backText">返回</block>
-						<block slot="content">{{ viewInfo.name }}</block>
-						<block slot="right">
-							<view class="action" @tap="showModal" data-target="viewModal">
-								<view class="icon t-icon icontubiaozhizuomobanyihuifu-1 load-cuIcon"></view>
-							</view>
-						</block>
-					</cu-custom>
+					<view class="cu-bar bg-white">
+						<view class="action" @tap="navigateBack">
+							<text class="cuIcon-back text-gray"></text> 返回
+						</view>
+						<view class="content text-bold">
+							{{ viewInfo.name }}
+						</view>
+						<view class="action" @tap="showModal" data-target="viewModal">
+							<view class="icon t-icon icontubiaozhizuomobanyihuifu-1 load-cuIcon"></view>
+						</view>
+					</view>
 				</view>
 				<swiper class="screen-swiper round-dot" :indicator-dots="true" :circular="true" :autoplay="true" interval="5000"
 				 duration="500">
@@ -76,10 +78,14 @@
 		<!-- 结算跳转栏 -->
 		<view>
 			<!-- 底部菜单栏 -->
-			<view class="action-section" @click="star">
+			<view class="action-section" @click="unStar" v-if="viewInfo.star">
 				<view class="align-center">
-					<text class="icon t-icon iconshoucang" v-if="isStar"></text>
-					<text class="icon t-icon iconshoucang2" v-else="isStar"></text>
+					<text class="icon t-icon iconshoucang" ></text>
+				</view>
+			</view>
+			<view class="action-section" @click="star" v-if="!viewInfo.star">
+				<view class="align-center">
+					<text class="icon t-icon iconshoucang2"></text>
 				</view>
 			</view>
 		</view>
@@ -142,6 +148,11 @@
 			}
 		},
 		methods: {
+			navigateBack: function() {
+				uni.navigateBack({
+					
+				})
+			},
 			showModal: function(e) {
 				this.modalName = e.currentTarget.dataset.target
 			},
@@ -156,21 +167,34 @@
 					id: this.viewId
 				};
 				this.$api.getViewDetailsAPI(data).then(res=>{
-					if(res.data.code == 200){
-						this.viewInfo = res.data.info
-					}
+					this.viewInfo = res.data
 				})
 			},
 			star: function() {
-				let postData = {
-					id: this.viewId
+				if(this.viewInfo.star == true){
+					return;
 				}
-				this.isStar = true
-				this.$api.setUserStarAPI(postData).then(res => {
-					
+				
+				let postData = {
+					"id": this.viewId,
+					"username": 'admin'
+				}
+				this.viewInfo.star = true
+				this.$api.setUserStarAPI(JSON.stringify(postData)).then(res => {
 				});
 			},
-			
+			unStar: function() {
+				if(this.viewInfo.star == false){
+					return;
+				}
+				let postData = {
+					"id": this.viewId,
+					"username": uni.getStorageSync("user")
+				}
+				this.viewInfo.star = false
+				this.$api.setUserUnStarAPI(JSON.stringify(postData)).then(res => {
+				});
+			},
 		},
 		mounted() {
 			this.getViewDetails();

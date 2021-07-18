@@ -58,7 +58,7 @@
 				uni.switchTab({
 					url: '/pages/tab/tab1/index'
 				})
-			},3000)
+			},2000)
 		},
 		methods: {
 			change: function(e) {

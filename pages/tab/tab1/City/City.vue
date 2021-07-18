@@ -101,7 +101,7 @@
 		},
 		onLoad: function(options) {
 			const that = this;
-			that.localCity = options.currentCity || "深圳";
+			that.localCity = options.currentCity || "成都";
 			setTimeout(() => {
 				uni.getSystemInfo({
 					success: function(res) {

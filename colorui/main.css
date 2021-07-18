@@ -1230,7 +1230,7 @@ button.cuIcon.lg {
 .cu-list.menu-avatar>.cu-item .content {
 	position: absolute;
 	left: 146upx;
-	width: calc(100% - 96upx - 60upx - 120upx - 20upx);
+	width: calc(100% - 96upx - 60upx - 120upx - 80upx);
 	line-height: 1.6em;
 }
 
@@ -1633,7 +1633,7 @@ button.cuIcon.lg {
 	flex: 1;
 	display: flex;
 	align-items: center;
-	margin: 0 30upx;
+	margin: 0 10upx;
 }
 
 .cu-bar .search-form+.action {

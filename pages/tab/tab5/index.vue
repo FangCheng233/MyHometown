@@ -71,19 +71,19 @@
 				</view>
 			</view> -->
 			<tui-list-view title="菜单列表">
-				<tui-list-cell @click="detail" :arrow="true">
+				<tui-list-cell @tap="detail" :arrow="true">
 					<view class="tui-item-box">
 						<view class="t-icon iconpengyouquan" size=24></view>
 						<text class="tui-list-cell_name ">朋友圈</text>
 					</view>
 				</tui-list-cell>
-				<tui-list-cell @click="detail" :arrow="true">
+				<tui-list-cell @tap="detail" :arrow="true">
 					<view class="tui-item-box">
 						<view class="t-icon icontubiaozhizuomobanyihuifu-"></view>
 						<text class="tui-list-cell_name">地址管理</text>
 					</view>
 				</tui-list-cell>
-				<tui-list-cell @click="detail" :arrow="true">
+				<tui-list-cell @tap="detail" :arrow="true">
 					<view class="tui-item-box">
 						<tui-icon name="explore-fill" :size="24" color="#19be6b"></tui-icon>
 						<view class="tui-list-cell_name">实验室</view>
@@ -92,14 +92,14 @@
 						</view>
 					</view>
 				</tui-list-cell>
-				<tui-list-cell @click="detail" :arrow="true">
+				<tui-list-cell @tap="detail" :arrow="true">
 					<view class="tui-item-box">
 						<tui-icon name="shop-fill" :size="23" color="#ed3f14"></tui-icon>
 						<view class="tui-list-cell_name">我的店铺</view>
 						<view class="tui-right">进入店铺</view>
 					</view>
 				</tui-list-cell>
-				<tui-list-cell @click="detail" :arrow="true" last="true">
+				<tui-list-cell @tap="detail" :arrow="true" last="true">
 					<view class="tui-item-box">
 						<image src="/static/images/my/thorui.png" class="tui-logo" mode="widthFix"></image>
 						<text class="tui-list-cell_name">关于</text>

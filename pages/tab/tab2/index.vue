@@ -138,13 +138,13 @@
 				gridBorder: false,
 				item: {},
 				cuIconList: [
-					{"badge":0,"color":"red","cuIcon":"icontushuguan","name":"旅游图书馆","url":'/pages/tab/tab4/Library/Library'},
-					{"badge":1,"color":"orange","cuIcon":"iconzudui","name":"组队","url":'/pages/tab/tab2/team/team'},
+					{"badge":0,"color":"orange","cuIcon":"iconzudui","name":"组队","url":'/pages/tab/tab2/team/team'},
+					{"badge":1,"color":"red","cuIcon":"icontushuguan","name":"旅游途鉴","url":'/pages/tab/tab2/Library/Library'},
 					{"badge":0,"color":"yellow","cuIcon":"iconfabu","name":"消息发布","url":'/pages/tab/tab2/Intelligence/Intelligence'},
 					{"badge":1,"color":"olive","cuIcon":"iconcooperation","name":"互助"},
 					{"badge":0,"color":"cyan","cuIcon":"iconminzongwei","name":"寻根"},
 					{"badge":0,"color":"blue","cuIcon":"iconfujin","name":"附近","url":'/pages/tab/tab2/near/near'},
-					{"badge":0,"color":"purple","cuIcon":"iconhuodong5","name":"活动"},
+					{"badge":0,"color":"purple","cuIcon":"iconhuodong5","name":"活动资讯"},
 					{"badge":0,"color":"mauve","cuIcon":"iconchengshi","name":"城市"},
 					{"badge":0,"color":"purple","cuIcon":"icondaoyou1","name":"找找看","url":"/pages/tab/tab2/type/type"},
 					{"badge":0,"color":"mauve","cuIcon":"iconzhoubian","name":"出游告警"}],
@@ -252,7 +252,6 @@
 				}
 				
 				this.$api.getHotViewsList(postData).then(res=>{
-					
 					if(res.data.length > 0){
 						// 
 						for(let i = 0; i < 10; i++) {

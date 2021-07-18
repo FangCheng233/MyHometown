@@ -1,0 +1,34 @@
+.text-wrapper {
+  word-break: break-all;
+  word-wrap: break-word
+}
+.tui-selected-list {
+	background-color: #fff;
+	border-radius: 20rpx;
+	overflow: hidden;
+	margin-left: 30px;
+	transform: translateZ(0);
+
+}
+.tui-cell-class {
+	display: flex;
+}
+.tui-dropdown-scroll {
+	height: 300rpx;
+}
+.cu-bar .search-form {
+	background-color: #ccf2df !important;
+	background-color: transparent;
+	line-height: 64upx;
+	height: 64upx;
+	font-size: 24upx;
+	color: #333333;
+	flex: 1;
+	display: flex;
+	align-items: center;
+	margin: 0 30upx;
+}
+.item:last-child {
+    margin-left: auto;
+    margin-right: 20px;
+}

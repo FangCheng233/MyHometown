@@ -51,11 +51,15 @@
 						<!-- 图片 -->
 						<view class="tui-chat-left" v-if="item.type=='image'&& item.position=='left'">
 							<image :src="to.image" class="tui-user-pic tui-right"></image>
-							<view class="tui-img-chatbox"><image src="/static/images/news/avatar_2.jpg" class="tui-chat-img" mode="widthFix"></image></view>
+							<view class="tui-img-chatbox">
+								<image :src="item.image" class="tui-chat-img" mode="widthFix"></image>
+							</view>
 						</view>
 						<view class="tui-chat-right" v-if="item.type=='image'&& item.position=='right'">
 							<view class="tui-flex-center tui-flex-end tui-flex-reverse">
-								<view class="tui-img-chatbox"><image src="/static/images/news/avatar_1.jpg" class="tui-chat-img" mode="widthFix"></image></view>
+								<view class="tui-img-chatbox">
+									<image :src="item.image" class="tui-chat-img" mode="widthFix"></image>
+								</view>
 								<image src="/static/images/chat/fail.png" class="tui-chat-fail tui-mr"></image>
 							</view>
 							<image :src="from.image" class="tui-user-pic tui-left"></image>
@@ -203,31 +207,31 @@ export default {
 			}, {
 				message: '你好',
 				type: 'image',
-				image: '/static/images/news/avatar_1.jpg',
+				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'left'
 			}, {
 				message: '你好',
 				type: 'text',
-				image: '/static/images/news/avatar_1.jpg',
+				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'right'
 			}, {
 				message: '你好',
 				type: 'voice',
-				image: '/static/images/news/avatar_1.jpg',
+				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'left'
 			}, {
 				message: '你好',
 				type: 'voice',
-				image: '/static/images/news/avatar_1.jpg',
+				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'right'
 			}, {
 				message: '星期一 11:29',
 				type: 'time',
-				image: '/static/images/news/avatar_1.jpg',
+				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'left'
 			}, {
@@ -245,31 +249,31 @@ export default {
 			}, {
 				message: '你好',
 				type: 'image',
-				image: '/static/images/news/avatar_1.jpg',
+				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'left'
 			}, {
 				message: '你好',
 				type: 'image',
-				image: '/static/images/news/avatar_1.jpg',
+				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'right'
 			}, {
 				message: '你好',
 				type: 'voice',
-				image: '/static/images/news/avatar_1.jpg',
+				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'left'
 			}, {
 				message: '你好',
 				type: 'voice',
-				image: '/static/images/news/avatar_1.jpg',
+				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'right'
 			}, {
 				message: '星期一 11:29',
 				type: 'time',
-				image: '/static/images/news/avatar_1.jpg',
+				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'left'
 			}],

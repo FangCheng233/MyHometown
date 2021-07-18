@@ -73,7 +73,7 @@ export const getDetailsAPI = (data) => {
 // attractions
 export const getHotViewsList = (data) => {
     return http.request({
-        url: '/data/view/hot',
+        url: '/view/hot',
         method: 'GET', 
         data,
 		// handle:true
@@ -81,7 +81,7 @@ export const getHotViewsList = (data) => {
 }
 export const getServiceAPI = (data) => {
     return http.request({
-        url: '/data/view/service',
+        url: '/view/service',
         method: 'GET', 
         data,
 		// handle:true
@@ -89,7 +89,7 @@ export const getServiceAPI = (data) => {
 }
 export const getRecommendedAPI = (data) => {
     return http.request({
-        url: '/data/view/recommended',
+        url: '/view/recommended',
         method: 'GET', 
         data,
 		// handle:true
@@ -97,7 +97,7 @@ export const getRecommendedAPI = (data) => {
 }
 export const browse = (data) => {
     return http.request({
-        url: '/data/view/browse',
+        url: '/view/browse',
         method: 'POST', 
         data,
 		// handle:true
@@ -106,7 +106,7 @@ export const browse = (data) => {
 // search
 export const searchAPI = (data) => {
     return http.request({
-        url: '/data/view/select',
+        url: '/view/select',
         method: 'GET', 
         data,
 		// handle:true
@@ -114,7 +114,7 @@ export const searchAPI = (data) => {
 }
 export const searchBaikeAPI = (data) => {
     return http.request({
-        url: '/data/view/baike',
+        url: '/view/baike',
         method: 'GET', 
         data,
 		// handle:true
@@ -123,7 +123,7 @@ export const searchBaikeAPI = (data) => {
 // video
 export const getVideoListAPI = (data) => {
     return http.request({
-        url: '/data/video/list',
+        url: '/video/list',
         method: 'GET', 
         data,
 		// handle:true
@@ -133,7 +133,7 @@ export const getVideoListAPI = (data) => {
 
 export const getViewDetailsAPI = (data) => {
     return http.request({
-        url: '/data/view/details',
+        url: '/view/details',
         method: 'GET', 
         data,
 		// handle:true
@@ -141,7 +141,15 @@ export const getViewDetailsAPI = (data) => {
 }
 export const setUserStarAPI = (data) => {
     return http.request({
-        url: '/data/star/like/' + uni.getStorageSync("user"),
+        url: '/star/like',
+        method: 'POST', 
+        data,
+		// handle:true
+    })
+}
+export const setUserUnStarAPI = (data) => {
+    return http.request({
+        url: '/star/unLike',
         method: 'POST', 
         data,
 		// handle:true
@@ -149,17 +157,26 @@ export const setUserStarAPI = (data) => {
 }
 export const getUserStarAPI = (data) => {
     return http.request({
-        url: '/data/star/get/' + uni.getStorageSync("user"),
+        url: '/star/get/admin'+ uni.getStorageSync("user"),
         method: 'GET', 
         data,
 		// handle:true
     })
+}
+// 获取adcode
+export const getCityCode = (data) =>{
+  return http.request({
+    url: '/star/getCityCode',
+    method: 'GET',
+	data,
+  })
 }
 // 获取验证码
 export const getCodeImg = (data) =>{
   return http.request({
     url: '/code',
     method: 'get'
+	
   })
 }
 
@@ -181,5 +198,7 @@ export default {
 	getViewDetailsAPI,
 	getCodeImg,
 	getUserStarAPI,
-	setUserStarAPI
+	setUserStarAPI,
+	setUserUnStarAPI,
+	getCityCode
 }

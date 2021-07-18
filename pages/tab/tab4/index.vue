@@ -7,21 +7,21 @@
 				<view class="content">
 					旅行目的地
 				</view>
-				<view class="action">
-					<text class=""></text>
+				<view class="action" @tap="show = !show">
+					<text class="">出发</text>
 				</view>
 			</view>
 		</view>
 		<view>
 			<checkbox-group @change="checkAllboxChange">
 				<view v-for="(pitem, pindex) in Like" :key="pindex.id">
-					<view class="cu-bar bg-white margin-top">
-						<view class="cu-form-group bg-blue">
-							<view class="title margin-left">{{ pitem.name}}</view>
+					<view class="cu-bar-city">
+						<view class="cu-form-group-city bg-green margin-left">
+							<view class="title">{{ pitem.name}}</view>
 						</view>
 						<view class="action">
 							<!-- 省份复选框 -->
-							<checkbox class="round" :class="pitem.checked?'checked':''" :checked="pitem.checked" :value="pitem.id"></checkbox>
+							<checkbox class="round" :class="pitem.checked?'checked':''" :checked="pitem.checked" :value="pitem.id + ''"></checkbox>
 						</view>
 					</view>
 					<checkbox-group @change="checkboxChange" :data-pindex="pindex">
@@ -29,13 +29,11 @@
 							<view class="cu-list menu-avatar">
 								<view class="cu-item" :class="modalName=='move-box-'+ vitem.id?'move-cur':''" v-for="(vitem,cindex) in Like[pindex].city[cindex].view" :key="vitem.id"
 								 @touchstart="ListTouchStart" @touchmove="ListTouchMove" @touchend="ListTouchEnd" :data-target="'move-box-' + vitem.id">
-									
-									<view class="cu-avatar lg" :style="[{backgroundImage:'url(https://ossweb-img.qq.com/images/lol/web201310/skin/big2100'+ (cindex+2) +'.jpg)'}]">
-										
+									<view class="cu-avatar lg" :style="[{backgroundImage:'url('+ vitem.image }]">
 									</view>
 									<view class="content">
 										<view class="text-grey">
-											<view>{{ vitem.name }}</view>
+											<view class="text-cut">{{ vitem.name }}</view>
 											<view class="text-green text-sm cu-tag round sm">学生优惠</view>
 										</view>
 										<view class="text-gray text-sm">
@@ -46,10 +44,10 @@
 									<view class="margin-right">
 										
 										<view class="text-grey text-xl">
-											<text class="text-price"></text>80
+											<text class="text-price"></text>{{ vitem.cost /2}}
 										</view>
 										<view class="text-orange text-sm line-through">
-											<text class="text-price"></text>160
+											<text class="text-price"></text>{{ vitem.cost}}
 										</view>
 									</view>
 									
@@ -66,110 +64,33 @@
 				</view>
 			</checkbox-group>
 		</view>
-		
+		<view>
+			<view class="cu-modal show" v-if="show">
+				<view class="cu-dialog">
+					<tui-pointMark :GDPSpeed="cityCodes">
+					</tui-pointMark>
+					<view class="cu-bar-city bg-white" style="height: 30px;">
+						<view class="action margin-0 flex-sub  solid-left" @tap="show = !show">重新选择</view>
+						<view class="action margin-0 flex-sub  solid-left" @tap="hideModal">生成路线地图</view>
+					</view>
+				</view>
+			</view>
+			
+		</view>
 	</view>
 </template>
 
 <script>
+	import tuiPointMark from '@/components/thorui/tui-pointMark/tui-pointMark.vue'
 	export default {
 		data() {
 			return {
 				modalName: null,
 				listTouchStart: 0,
-				Like: [{
-						id: '0',
-						name: '云南省',
-						city: [{
-							name: '昆明市',
-							view: [{
-								id: '1',
-								name: '海埂大坝',
-								address: '',
-								cost: 0,
-								image: '',
-								url: ''
-							}, {
-								id: '2',
-								name: '翠湖公园',
-								address: '',
-								cost: 0,
-								image: '',
-								url: ''
-							}]
-						}, {
-							name: '大理白族自治州',
-							view: [{
-								id: '3',
-								name: '大理古城',
-								address: '',
-								cost: 0,
-								image: '',
-								url: ''
-							}, {
-								id: '4',
-								name: '崇圣寺',
-								address: '',
-								cost: 0,
-								image: '',
-								url: ''
-							}, {
-								id: '5',
-								name: '苍山',
-								address: '',
-								cost: 0,
-								image: '',
-								url: ''
-							}, {
-								id: '6',
-								name: '蝴蝶泉',
-								address: '',
-								cost: 0,
-								image: '',
-								url: ''
-							}]
-						}]
-					}, {
-						id: '1',
-						name: '贵州省',
-						city: [{
-							name: '贵阳市',
-							view: [{
-								id: '7',
-								name: '黔灵山公园',
-								address: '',
-								cost: 0,
-								image: '',
-								url: ''
-							}, {
-								id: '8',
-								name: '甲秀楼',
-								address: '',
-								cost: 0,
-								image: '',
-								url: ''
-							}]
-						}, {
-							name: '黔东南苗族自治州',
-							selected: true,
-							view: [{
-								id: '9',
-								name: '西江千户苗寨',
-								address: '',
-								cost: 0,
-								image: '',
-								url: ''
-							}, {
-								id: '10',
-								name: '天眼',
-								address: '',
-								cost: 0,
-								image: '',
-								url: ''
-							}]
-						}]
-					}
-				],
+				Like: [],
 				checkedList: [],
+				cityCodes: [],
+				show: false
 			}
 				
 		},
@@ -189,10 +110,10 @@
 							sum++;
 							const item = itemJ[k]
 							if(values.includes(itemJ[k].id)){
-							    this.$set(item,'checked',true)
+							    this.$set(item,'checked', true)
 								this.setCheckedInfoList(item.id)
 							}else{
-							    this.$set(item,'checked',false)
+							    this.$set(item,'checked', false)
 								this.removeCheckedInfoList(item.id)
 							}
 							if(item.checked == true){
@@ -206,6 +127,7 @@
 						this.$set(it,'checked',false)
 					}
 			    }
+				this.searchCity()
 			},
 			checkAllboxChange: function (e) {
 			    var items = this.Like,
@@ -214,7 +136,7 @@
 			    for (var i = 0, lenI = items.length; i < lenI; ++i) {
 					// 市级遍历
 					const it = items[i]
-					if(values.includes(it.id)){
+					if(values.includes(it.id + "")){
 					    this.$set(it,'checked',true)
 					}else{
 					    this.$set(it,'checked',false)
@@ -222,8 +144,8 @@
 					for (var j = 0, lenJ = items[i].city.length, itemI = items[i].city; j < lenJ; ++j) {
 						// 景点遍历
 						for (var k = 0, lenK = itemI[j].view.length, itemJ = itemI[j].view; k < lenK; ++k) {
-							const item = itemJ[k]
-							if(values.includes(it.id)){
+							var item = itemJ[k]
+							if(values.includes(it.id + "")){
 							    this.$set(item,'checked',true)
 								this.setCheckedInfoList(item.id)
 							}else{
@@ -233,6 +155,7 @@
 						}
 					}
 			    }
+				this.searchCity()
 			},
 			setCheckedInfoList: function(id){
 				var checkedList = this.checkedList;
@@ -273,14 +196,31 @@
 			},
 			detail: function() {
 				this.tui.toast("click~")
+			},
+			loadStar: function() {
+				this.$api.getUserStarAPI({}).then(res=>{
+					this.Like = res.data
+				});
+			},
+			searchCity: function() {
+				let postData = {
+					viewIds: this.checkedList
+				}
+				this.$api.getCityCode(postData).then(res=>{
+					if(res.data.length >0){
+						for(var i = 0; i < res.data.length; i++){
+							this.cityCodes[res.data[i]] = 7
+						}
+					}
+				});
+				
 			}
 			
 		},
-		created() {
-			this.$api.getUserStarAPI({}).then(res=>{
-				this.Like = res.data
-			});
+		onShow() {
+			this.loadStar()
 		}
+		
 	}
 </script>
 
@@ -319,5 +259,19 @@
 	.line-through {
 		text-decoration:line-through;
 	}
-
+	.cu-bar-city {
+		display: flex;
+		position: relative;
+		align-items: center;
+		height: 60upx !important;
+		justify-content: space-between;
+	}
+/* 	.cu-form-group-city {
+		background-color: #ffffff;
+		padding: 1upx 30upx;
+		display: flex;
+		align-items: center;
+		min-height: 100upx;
+		justify-content: space-between;
+	} */
 </style>

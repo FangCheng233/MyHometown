@@ -17,7 +17,7 @@
 						<view class="cu-tag badge" v-if="message>0">{{ message>99?'99+':message }}</view>
 					</view>
 				</navigator>
-				<view class="bg-transparent search-form round ">
+				<view class="bg-transparent search-form round">
 					<text class="cuIcon-search text-white"></text>
 					<swiper vertical autoplay circular interval="3000" class="tui-swiper">
 						<swiper-item v-for="(item, index) in hotSearch" :key="index" class="tui-swiper-item" @tap="search" tui-bg-transparen>
@@ -321,6 +321,7 @@
 			let _this = this
 			this.$eventHub.$on('emit', data => {
 				this.city = data
+				// console.log(data)
 				// setTimeout(() => {
 				// 	this.tui.toast('您选择了：' + data);
 				// }, 350);
@@ -347,7 +348,7 @@
 			},
 			search: function() {
 				uni.navigateTo({
-					url: '../../news/search/search'
+					url: '/pages/search/search'
 				});
 			},
 			InputBlur: function() {

@@ -31,6 +31,7 @@
 						<view class="action">
 							刘德华
 						</view>
+						<tui-top-dropdown>sssssssssss</tui-top-dropdown>
 						<view class="action text-sm">
 							2小时前
 						</view>
@@ -62,6 +63,7 @@
 		<view>
 		</view>
 		<view>
+			
 		</view>
 		<view>
 		</view>

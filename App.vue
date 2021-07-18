@@ -3,7 +3,7 @@
 	export default {
 		data() {
 			return {
-				
+				delay: 10000,
 			}
 		},
 		onLaunch: function() {
@@ -52,7 +52,7 @@
 				  if ("WebSocket" in window) {
 					 console.log("您的浏览器支持 WebSocket!");	
 					 //实例化websocket	 
-					 that.ws = new WebSocket("ws://localhost:8086/webSocket/"+uni.getStorageSync("user"));
+					 that.ws = new WebSocket("ws://fcstudev.com:8085/webSocket/"+uni.getStorageSync("user"));
 					        //保存设置全局websocket对象
 						    that.$global.setWs(that.ws);
 						    //监听websocket连接打开方法
@@ -66,8 +66,8 @@
 								 console.log("连接已出错...");
 							   	 //延迟执行重连
 							      setTimeout(() => {
-							        that.creatSocket();
-							      }, that.$global.delay);
+							        // that.creatSocket();
+							      }, 10000);
 							};
 							//监听websocket关闭方法
 						    that.ws.onclose = function(e) {
@@ -75,8 +75,8 @@
 							      console.log("连接已关闭..." + e.code + ' ' + e.reason + ' ' + e.wasClean);
 							   	 //延迟执行重连
 							      setTimeout(() => {
-							        that.creatSocket();
-							      }, that.$global.delay);
+							        // that.creatSocket();
+							      }, 10000);
 						    };
 						    
 						    //监听websocket接收消息事件（接收来自服务器的实时消息）
@@ -101,7 +101,7 @@
 									"to":"admin",
 									"message":"keepalive"
 							})
-							that.keepAlive()			 		
+							// that.keepAlive()			 		
 					}
 					 }, 10000);				
 			},
@@ -117,6 +117,7 @@
 			// 初始化socket链接，
 			if(uni.getStorageSync("isLogin")){
 				this.creatSocket()
+				uni.setStorageSync("user","admin")
 			}
 			
 		}
@@ -178,7 +179,7 @@
 	@import "colorui/icon.css";
 	@import './common/app.css';
 	/* #ifndef APP-NVUE */
-	@import './components/uni/uParse/src/wxParse.css';
+	/* @import './components/uni/uParse/src/wxParse.css'; */
 	@import './static/iconfont-weapp/iconfont-weapp-icon.css';
 	/* #endif */
 	.icon {

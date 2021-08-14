@@ -1,0 +1,15 @@
+.t-icon {
+	    display: inline-block;
+	    width: 26px; 
+	    height: 26px;
+	    background-repeat: no-repeat;
+	    background-position: center;
+	    background-size: 100%;
+	}
+	
+	.cu-list.menu-avatar>.cu-item .content {
+		position: absolute;
+		left: 146upx;
+		width: calc(100% - 96upx - 60upx - 120upx - 20upx);
+		line-height: 1.2em;
+	}

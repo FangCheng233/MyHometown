@@ -16,6 +16,9 @@
 .tui-dropdown-scroll {
 	height: 300rpx;
 }
+.action {
+	margin-right: 2px;
+}
 .cu-bar .search-form {
 	background-color: #ccf2df !important;
 	background-color: transparent;
@@ -26,7 +29,7 @@
 	flex: 1;
 	display: flex;
 	align-items: center;
-	margin: 0 30upx;
+	margin: 0 10upx;
 }
 .item:last-child {
     margin-left: auto;

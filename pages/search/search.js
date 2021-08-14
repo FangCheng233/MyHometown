@@ -27,25 +27,17 @@ export default {
 				canLoad: false,
 				dropdownShow: false,
 				dropdownlistData: [{
-					name: "微信支付",
+					name: "莲宝叶则",
 				}, {
-					name: "支付宝支付",
+					name: "四姑娘山",
 				}, {
-					name: "银行卡支付",
+					name: "牛背山",
 				}, {
-					name: "微信支付",
+					name: "鱼子西",
 				}, {
-					name: "支付宝支付支付宝支付",
+					name: "若尔盖",
 				}, {
-					name: "银行卡支付",
-				}, {
-					name: "银行卡支付",
-				}, {
-					name: "微信支付",
-				}, {
-					name: "支付宝支付支付宝支付",
-				}, {
-					name: "银行卡支付",
+					name: "中谷村",
 				}],
 			}
 		},
@@ -128,5 +120,8 @@ export default {
 				}
 				this.dropdownShow = !this.dropdownShow
 			},
+			onTypeIn(){
+				this.dropdownShow = false
+			}
 		},
 	}

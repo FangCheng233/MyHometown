@@ -60,7 +60,7 @@
 								<view class="tui-img-chatbox">
 									<image :src="item.image" class="tui-chat-img" mode="widthFix"></image>
 								</view>
-								<image src="/static/images/chat/fail.png" class="tui-chat-fail tui-mr"></image>
+								<image src="http://1.14.67.162/images/chat/fail.png" class="tui-chat-fail tui-mr"></image>
 							</view>
 							<image :src="from.image" class="tui-user-pic tui-left"></image>
 						</view>
@@ -82,7 +82,7 @@
 							<image :src="to.image" class="tui-user-pic tui-right"></image>
 							<view class="tui-flex-center">
 								<view class="tui-chatbox tui-chatbox-left tui-chat-flex tui-mr">
-									<image src="/static/images/chat/voice.png" class="tui-chat-voice tui-mr"></image>
+									<image src="http://1.14.67.162/images/chat/voice.png" class="tui-chat-voice tui-mr"></image>
 									<!-- 语音条长度 -->
 									<view style="width:300rpx">20"</view>
 								</view>
@@ -94,7 +94,7 @@
 							<view class="tui-flex-center tui-flex-end">
 								<tui-badge :dot="true" type="danger"></tui-badge>
 								<view class="tui-chatbox tui-chatbox-right tui-chat-flex tui-ml tui-flex-reverse">
-									<image src="/static/images/chat/voice.png" class="tui-chat-voice tui-rotate tui-ml"></image>
+									<image src="http://1.14.67.162/images/chat/voice.png" class="tui-chat-voice tui-rotate tui-ml"></image>
 									<view style="width:280rpx;text-align:right">18"</view>
 								</view>
 							</view>
@@ -129,7 +129,7 @@ export default {
 			mesList: [{
 					pic: [{
 						id:1,
-						src:"/static/images/news/avatar_1.jpg"
+						src:"http://1.14.67.162/images/news/avatar_1.jpg"
 					}],
 					name: "张三",
 					id: "qq",
@@ -137,7 +137,7 @@ export default {
 				}, {
 					pic: [{
 						id:1,
-						src:"/static/images/news/avatar_2.jpg"
+						src:"http://1.14.67.162/images/news/avatar_2.jpg"
 					}],
 					name: "李四",
 					id: "wechat",
@@ -145,7 +145,7 @@ export default {
 				}, {
 					pic: [{
 						id:1,
-						src:"/static/images/news/1.jpg"
+						src:"http://1.14.67.162/images/news/1.jpg"
 					}],
 					name: "王五",
 					id: "moments",
@@ -153,7 +153,7 @@ export default {
 				}, {
 					pic: [{
 						id:1,
-						src:"/static/images/news/2.jpg"
+						src:"http://1.14.67.162/images/news/2.jpg"
 					}],
 					name: "王富贵",
 					id: "alipay",
@@ -161,7 +161,7 @@ export default {
 				}, {
 					pic: [{
 						id:1,
-						src:"/static/images/news/3.jpg"
+						src:"http://1.14.67.162/images/news/3.jpg"
 					}],
 					name: "敖丙",
 					id: "sina",
@@ -169,7 +169,7 @@ export default {
 				}, {
 					pic: [{
 						id:1,
-						src:"/static/images/news/4.jpg"
+						src:"http://1.14.67.162/images/news/4.jpg"
 					}],
 					name: "哪吒",
 					id: "applets",
@@ -177,7 +177,7 @@ export default {
 				}, {
 					pic: [{
 						id:1,
-						src:"/static/images/news/list_1.jpg"
+						src:"http://1.14.67.162/images/news/list_1.jpg"
 					}],
 					name: "伏羲",
 					id: "dingtalk",
@@ -185,7 +185,7 @@ export default {
 				}, {
 					pic: [{
 						id:1,
-						src:"/static/images/news/list_2.jpg"
+						src:"http://1.14.67.162/images/news/list_2.jpg"
 					}],
 					name: "女娲",
 					id: "mail-fill",
@@ -207,31 +207,31 @@ export default {
 			}, {
 				message: '你好',
 				type: 'image',
-				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
+				image: 'http://1.14.67.162/images/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'left'
 			}, {
 				message: '你好',
 				type: 'text',
-				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
+				image: 'http://1.14.67.162/images/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'right'
 			}, {
 				message: '你好',
 				type: 'voice',
-				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
+				image: 'http://1.14.67.162/images/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'left'
 			}, {
 				message: '你好',
 				type: 'voice',
-				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
+				image: 'http://1.14.67.162/images/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'right'
 			}, {
 				message: '星期一 11:29',
 				type: 'time',
-				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
+				image: 'http://1.14.67.162/images/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'left'
 			}, {
@@ -255,31 +255,31 @@ export default {
 			}, {
 				message: '你好',
 				type: 'image',
-				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
+				image: 'http://1.14.67.162/images/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'right'
 			}, {
 				message: '你好',
 				type: 'voice',
-				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
+				image: 'http://1.14.67.162/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'left'
 			}, {
 				message: '你好',
 				type: 'voice',
-				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
+				image: 'http://1.14.67.162/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'right'
 			}, {
 				message: '星期一 11:29',
 				type: 'time',
-				image: '/static/images/tuijian/lugu-lake-4648775_1920.jpg',
+				image: 'http://1.14.67.162/tuijian/lugu-lake-4648775_1920.jpg',
 				voice: '',
 				position: 'left'
 			}],
 			from: {
 				id: 'admin',
-				image: '/static/images/news/1.jpg'
+				image: 'http://1.14.67.162/images/news/1.jpg'
 			},
 			to: {
 				id: 'admin',

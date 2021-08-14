@@ -1,0 +1,125 @@
+/* 热门景点 */
+	
+	/* header start */
+	.cu-bar {
+		box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+	}
+	.bg-transparent {
+		border-style:solid;
+		border-width: 1px;
+		background-color: transparent;
+		/* background-color: #0062CC; */
+		border-color: #ffffff;
+	}
+	.search-form {
+		background-color: transparent !important;
+		line-height: 64upx;
+		height: 64upx;
+		font-size: 24upx;
+		color: #333333;
+		flex: 1;
+		display: flex;
+		align-items: center;
+		margin: 0 30upx;
+	}
+	.cu-tag.badge {
+		border-radius: 200upx;
+		position: absolute;
+		top: -10upx;
+		right: -20upx;
+		font-size: 20upx;
+		padding: 0upx 5upx;
+		height: 28upx;
+		color: #ffffff;
+	}
+	/* header end */
+	
+	.tui-swiper {
+		margin-left: 8rpx;
+		font-size: 28rpx;
+		height: 80rpx;
+		flex: 1;
+	}
+	
+	.tui-swiper-item {
+		display: flex;
+		align-items: center;
+	}
+	
+	
+	.tui-group-name {
+		width: 100%;
+		font-size: 32rpx;
+		font-weight: bold;
+		text-align: center;
+		padding: 4rpx 10rpx;
+		display: flex;
+		/* align-items: center; */
+		/* justify-content: left; */
+	}
+	.box-size {
+		/* height: auto !important; */
+		border-style:solid !important;
+		border-spacing: auto !important;
+		border-width: 2px !important;
+		border-radius: 10px;
+	}
+	
+	.tui-share-top,
+	.tui-share-bottom {
+		min-width: 101%;
+		padding: 0 10rpx 0 20rpx;
+		white-space: nowrap;
+	}
+	.tui-share-item {
+		width: 126rpx;
+		display: inline-block;
+		margin-right: 24rpx;
+		text-align: center;
+	}
+	
+	.tui-item-last {
+		margin: 0;
+	}
+	.tui-empty {
+		display: inline-block;
+		width: 30rpx;
+		visibility: hidden;
+	}
+	
+	.tui-share-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #fafafa;
+		height: 126rpx;
+		width: 126rpx;
+		border-radius: 32rpx;
+	}
+	
+	.tui-share-text {
+		font-size: 24rpx;
+		color: #7E7E7E;
+		line-height: 24rpx;
+		padding: 0rpx 0;
+		white-space: nowrap;
+	}
+	.title {
+		z-index: 999;
+	}
+	
+	.swiper-box {
+		height: 200px;
+	}
+
+	.uni-bg-red {
+		background-color: #ff5a5f;
+	}
+	
+	.uni-bg-green {
+		background-color: #09bb07;
+	}
+	
+	.uni-bg-blue {
+		background-color: #007aff;
+	}

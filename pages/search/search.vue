@@ -2,9 +2,9 @@
 	<view>
 		<!-- 顶部 -->
 		<view>
-			<view class="cu-bar search bg-white">
-				<view class="action" @tap="goBack">
-					<text>取消</text>
+			<view class="cu-bar search bg-blue">
+				<view class="action text-cut" @tap="goBack">
+					<tui-icon name="back" color="white"></tui-icon>
 				</view>
 				<!--下拉选择框 dropdownlist-->
 				<view class="search-form round" style="margin-left: 0px;">
@@ -12,9 +12,8 @@
 						<template v-slot:selectionbox>
 							<view class="search-form round">
 								<text class="cuIcon-search"></text>
-								<input style="width: 200px;" type="text" placeholder="搜索地区、图片、文章、视频" v-model="value" confirm-type="search" @tap="dropDownList(-1)"></input>
+								<input style="width: 200px;" type="text" placeholder="搜索地区、图片、文章、视频" v-model="value" confirm-type="search" @focus="dropDownList(-1)" @input="onTypeIn()" @blur="dropdownShow=false"></input>
 							</view>
-							
 						</template>
 						<template v-slot:dropdownbox>
 							<view class="tui-selected-list">
@@ -34,7 +33,7 @@
 											</view>
 										</tui-list-cell>
 									</block>
-									<view class="text-center" @click="removeHisAll()">清除所有聊天记录</view>
+									<view v-if="dropdownlistData.length!=0" class="text-center" @click="removeHisAll()">清除所有聊天记录</view>
 								</scroll-view>
 							</view>
 						</template>
@@ -114,16 +113,12 @@
 			</block>
 			<!-- 直播 -->
 			<block v-if="TabCur == 3">
-				<search-live></search-live>
-				
 			</block>
 			<!-- 用户动态 -->
 			<block v-if="TabCur == 4">
-				<search-context></search-context>
 			</block>
 			<!-- 视频 -->
 			<block v-if="TabCur == 5">
-				<search-video></search-video>
 			</block>
 		</view>
 		<view>

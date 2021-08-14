@@ -31,7 +31,7 @@ http.delete('user/1').then((res)=>{
 */
 export default {
 	config: {
-		baseUrl: "http://fcstudev.com:8083",
+		baseUrl: "http://fcstudev.com:8080",
 		header: {
 			'Content-Type':'application/json;charset=UTF-8',
 			// 'Content-Type':'application/x-www-form-urlencoded'

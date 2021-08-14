@@ -27,7 +27,106 @@ export const test = (data) => {
         data,
     })
 }
+// attractions
+export const getDetailsAPI = (data) => {
+    return http.request({
+        url: '/user/info',
+        method: 'GET', 
+        data,
+		// handle:true
+    })
+}
+export const getHotViewsList = (data) => {
+    return http.request({
+        url: '/data/view/hot',
+        method: 'GET', 
+        data,
+    })
+}
+export const getServiceAPI = (data) => {
+    return http.request({
+        url: '/view/service',
+        method: 'GET', 
+        data,
+		// handle:true
+    })
+}
+export const getRecommendedAPI = (data) => {
+    return http.request({
+        url: '/view/recommended',
+        method: 'GET', 
+        data,
+		// handle:true
+    })
+}
+export const browse = (data) => {
+    return http.request({
+        url: '/view/browse',
+        method: 'POST', 
+        data,
+		// handle:true
+    })
+}
+// search
+export const searchAPI = (data) => {
+    return http.request({
+        url: '/data/view/select',
+        method: 'GET', 
+        data,
+		// handle:true
+    })
+}
+export const searchBaikeAPI = (data) => {
+    return http.request({
+        url: '/view/baike',
+        method: 'GET', 
+        data,
+		// handle:true
+    })
+}
+// video
+export const getVideoListAPI = (data) => {
+    return http.request({
+        url: '/video/list',
+        method: 'GET', 
+        data,
+		// handle:true
+    })
+}
+// view
 
+export const getViewDetailsAPI = (data) => {
+    return http.request({
+        url: '/data/view/details',
+        method: 'GET', 
+        data,
+		// handle:true
+    })
+}
+export const setUserStarAPI = (data) => {
+    return http.request({
+        url: '/star/like',
+        method: 'POST', 
+        data,
+		// handle:true
+    })
+}
+export const setUserUnStarAPI = (data) => {
+    return http.request({
+        url: '/star/unLike',
+        method: 'POST', 
+        data,
+		// handle:true
+    })
+}
+export const getUserStarAPI = (data) => {
+    return http.request({
+        url: '/star/get/admin'+ uni.getStorageSync("user"),
+        method: 'GET', 
+        data,
+		// handle:true
+    })
+}
 // 轮播图
 export const banner = (data) => {
     return http.request({
@@ -62,107 +161,7 @@ export const getCodeAPI = (data) => {
 		// handle:true
     })
 }
-export const getDetailsAPI = (data) => {
-    return http.request({
-        url: '/user/info',
-        method: 'GET', 
-        data,
-		// handle:true
-    })
-}
-// attractions
-export const getHotViewsList = (data) => {
-    return http.request({
-        url: '/view/hot',
-        method: 'GET', 
-        data,
-		// handle:true
-    })
-}
-export const getServiceAPI = (data) => {
-    return http.request({
-        url: '/view/service',
-        method: 'GET', 
-        data,
-		// handle:true
-    })
-}
-export const getRecommendedAPI = (data) => {
-    return http.request({
-        url: '/view/recommended',
-        method: 'GET', 
-        data,
-		// handle:true
-    })
-}
-export const browse = (data) => {
-    return http.request({
-        url: '/view/browse',
-        method: 'POST', 
-        data,
-		// handle:true
-    })
-}
-// search
-export const searchAPI = (data) => {
-    return http.request({
-        url: '/view/select',
-        method: 'GET', 
-        data,
-		// handle:true
-    })
-}
-export const searchBaikeAPI = (data) => {
-    return http.request({
-        url: '/view/baike',
-        method: 'GET', 
-        data,
-		// handle:true
-    })
-}
-// video
-export const getVideoListAPI = (data) => {
-    return http.request({
-        url: '/video/list',
-        method: 'GET', 
-        data,
-		// handle:true
-    })
-}
-// view
 
-export const getViewDetailsAPI = (data) => {
-    return http.request({
-        url: '/view/details',
-        method: 'GET', 
-        data,
-		// handle:true
-    })
-}
-export const setUserStarAPI = (data) => {
-    return http.request({
-        url: '/star/like',
-        method: 'POST', 
-        data,
-		// handle:true
-    })
-}
-export const setUserUnStarAPI = (data) => {
-    return http.request({
-        url: '/star/unLike',
-        method: 'POST', 
-        data,
-		// handle:true
-    })
-}
-export const getUserStarAPI = (data) => {
-    return http.request({
-        url: '/star/get/admin'+ uni.getStorageSync("user"),
-        method: 'GET', 
-        data,
-		// handle:true
-    })
-}
 // 获取adcode
 export const getCityCode = (data) =>{
   return http.request({

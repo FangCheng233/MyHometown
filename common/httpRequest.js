@@ -43,13 +43,6 @@ const tui = {
 		}
 		return iphonex;
 	},
-	constNum: function() {
-		let time = 0;
-		// #ifdef APP-PLUS
-		time = this.isAndroid() ? 300 : 0;
-		// #endif
-		return time
-	},
 	delayed: null,
 	/**
 	 * 请求数据处理
@@ -65,7 +58,7 @@ const tui = {
 	 *  true: 隐藏
 	 *  false:显示
 	 */
-	request: function(url, method, postData, isDelay, isForm, hideLoading) {
+	requests: function(url, method, postData, isDelay, isForm, hideLoading) {
 		//接口请求
 		let loadding = false;
 		tui.delayed && uni.hideLoading();
@@ -83,42 +76,42 @@ const tui = {
 			}, isDelay ? 1000 : 0)
 		}
 
-		return new Promise((resolve, reject) => {
-			uni.request({
-				url: tui.interfaceUrl() + url,
-				data: postData,
-				header: {
-					'content-type': isForm ? 'application/x-www-form-urlencoded' : 'application/json',
-					'Authorization': tui.getToken()
-				},
-				method: method, //'GET','POST'
-				dataType: 'json',
-				success: (res) => {
-					clearTimeout(tui.delayed)
-					tui.delayed = null;
-					if (loadding && !hideLoading) {
-						uni.hideLoading()
-					}
-					// if (res.data && res.data.code == 1) {
-					// 	uni.clearStorageSync()
-					// 	tui.modal("登录信息已失效，请重新登录", false, () => {
-					// 		//store.commit("logout") 登录页面执行
-					// 		uni.redirectTo({
-					// 			url: '/pages/common/login/login'
-					// 		})
-					// 	})
-					// 	return
-					// }
-					resolve(res.data)
-				},
-				fail: (res) => {
-					clearTimeout(tui.delayed)
-					tui.delayed = null;
-					tui.toast("网络不给力，请稍后再试~")
-					reject(res)
-				}
-			})
-		})
+		// return new Promise((resolve, reject) => {
+		// 	uni.request({
+		// 		url: tui.interfaceUrl() + url,
+		// 		data: postData,
+		// 		header: {
+		// 			'content-type': isForm ? 'application/x-www-form-urlencoded' : 'application/json',
+		// 			'Authorization': tui.getToken()
+		// 		},
+		// 		method: method, //'GET','POST'
+		// 		dataType: 'json',
+		// 		success: (res) => {
+		// 			clearTimeout(tui.delayed)
+		// 			tui.delayed = null;
+		// 			if (loadding && !hideLoading) {
+		// 				uni.hideLoading()
+		// 			}
+		// 			// if (res.data && res.data.code == 1) {
+		// 			// 	uni.clearStorageSync()
+		// 			// 	tui.modal("登录信息已失效，请重新登录", false, () => {
+		// 			// 		//store.commit("logout") 登录页面执行
+		// 			// 		uni.redirectTo({
+		// 			// 			url: '/pages/common/login/login'
+		// 			// 		})
+		// 			// 	})
+		// 			// 	return
+		// 			// }
+		// 			resolve(res.data)
+		// 		},
+		// 		fail: (res) => {
+		// 			clearTimeout(tui.delayed)
+		// 			tui.delayed = null;
+		// 			tui.toast("网络不给力，请稍后再试~")
+		// 			reject(res)
+		// 		}
+		// 	})
+		// })
 	},
 	/**
 	 * 上传文件

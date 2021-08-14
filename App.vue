@@ -116,7 +116,7 @@
 			// 首先验证登录
 			// 初始化socket链接，
 			if(uni.getStorageSync("isLogin")){
-				this.creatSocket()
+				// this.creatSocket()
 				uni.setStorageSync("user","admin")
 			}
 			
@@ -175,11 +175,9 @@
 
 <style>
 	/*每个页面公共css */
-	@import "colorui/main.css";
-	@import "colorui/icon.css";
-	@import './common/app.css';
+	@import './components/colorui/main.css';
+	@import './components/colorui/icon.css';
 	/* #ifndef APP-NVUE */
-	/* @import './components/uni/uParse/src/wxParse.css'; */
 	@import './static/iconfont-weapp/iconfont-weapp-icon.css';
 	/* #endif */
 	.icon {
